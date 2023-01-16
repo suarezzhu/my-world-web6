@@ -7,12 +7,14 @@ export default defineConfig({
   plugins: [
     vue()
   ],
+
   resolve: {
     alias: {
       // 这里不需要__dirname，直接使用，因为vite3内置了这个变量，用vite2的方式会报错
-      "@": resolve("src"),
+      '@':resolve('src'),
       "views": resolve("src/views"),
       'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
+
     },
   },
 

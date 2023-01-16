@@ -1,0 +1,7 @@
+node_modules
+.idea/
+dist
+dist_soil_pollution
+dist.zip
+.history
+.DS_Store
