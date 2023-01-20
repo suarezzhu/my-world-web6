@@ -1,15 +1,15 @@
 
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/Index.vue'
-
-const constantFiles = require.context('./constantModules', true, /\.ts$/)
+debugger
+const constantFiles = require["context"]('./constantModules', true, /\.ts$/)
 let constantModules: Array<RouteRecordRaw> = []
 constantFiles.keys().forEach((key) => {
   if (key === './index.ts') return
   constantModules = constantModules.concat(constantFiles(key).default)
 })
 
-const asyncFiles = require.context('./newPermissionMoudles', true, /\.ts$/)
+const asyncFiles = require["context"]('./newPermissionMoudles', true, /\.ts$/)
 // const asyncFiles = require.context('./permissionModules', true, /\.ts$/)
 let permissionModules: Array<RouteRecordRaw> = []
 asyncFiles.keys().forEach((key) => {
@@ -25,7 +25,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '/redirect/:path(.*)',
-        component: () => import(/* webpackChunkName: "redirect" */ '@/views/redirect/Index.vue')
+        component: () => import('@/view/redirect/Index.vue')
       }
     ]
   },
@@ -36,7 +36,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     children: [
       {
         path: 'dashboard',
-        component: () => import(/* webpackChunkName: "dashboard" */ '@/views/dashboard/Index.vue'),
+        component: () => import('@/view/dashboard/Index.vue'),
         name: 'Dashboard',
         meta: {
           title: 'dashboard',
@@ -48,7 +48,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
   },
   ...constantModules
 ]
-
+debugger
 export const asyncRoutes: Array<RouteRecordRaw> = [
   ...permissionModules
 ]

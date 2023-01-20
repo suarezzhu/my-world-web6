@@ -16,13 +16,13 @@ const sitesRouter: Array<RouteRecordRaw> = [
 
       {
         path: 'bookNav',
-        component: () => import('@/views/book/bookNav.vue'),
+        component: () => import('@/view/book/bookNav.vue'),
         name: 'bookNav',
         meta: { title: 'bookNav' }
       },
       {
         path: 'bookEdit',
-        component: () => import('@/views/book/bookEdit.vue'),
+        component: () => import('@/view/book/bookEdit.vue'),
         name: 'bookEdit',
         meta: { title: 'bookEdit' }
       }
